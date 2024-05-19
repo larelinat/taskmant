@@ -1,0 +1,16 @@
+<nav class="footer-container" mat-align-tabs="center" mat-tab-nav-bar>
+  @for (link of links; track link) {
+    <a
+      mat-tab-link
+      routerLinkActive
+      #rla="routerLinkActive"
+      [active]="rla.isActive"
+      routerLink="{{ link.path }}"
+      class="link-container">
+      <div class="link-container">
+        <mat-icon class="link-element">{{ link.icon }}</mat-icon>
+        <span class="link-element">{{ link.label }}</span>
+      </div>
+    </a>
+  }
+</nav>

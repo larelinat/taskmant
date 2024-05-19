@@ -1,0 +1,19 @@
+<div class="login">
+  <form (ngSubmit)="onSubmit()" [formGroup]="loginForm" class="login-form">
+    <mat-form-field>
+      <mat-label>Пользователь</mat-label>
+      <mat-select formControlName="selectUser" id="selectUser">
+        @for (user of users; track user.id) {
+          <mat-option [value]="user.id">{{ user.name }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <button
+      [disabled]="loginForm.invalid"
+      color="primary"
+      mat-flat-button
+      type="submit">
+      Войти
+    </button>
+  </form>
+</div>

@@ -1,0 +1,15 @@
+<div class="create-team">
+  <form (ngSubmit)="onSubmit()" [formGroup]="teamForm" class="create-team-form">
+    <mat-form-field>
+      <mat-label>Имя</mat-label>
+      <input formControlName="name" id="name" matInput />
+    </mat-form-field>
+    <button
+      [disabled]="teamForm.invalid"
+      color="primary"
+      mat-flat-button
+      type="submit">
+      {{ id ? 'Сохранить' : 'Создать' }}
+    </button>
+  </form>
+</div>

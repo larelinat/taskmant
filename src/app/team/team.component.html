@@ -1,0 +1,18 @@
+<div class="team">
+  <mat-card *ngFor="let person of persons$ | async">
+    <mat-card-header>
+      <mat-card-title>{{ person.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-actions>
+      <button (click)="edit(person.id)" color="primary" mat-flat-button>
+        Редактировать
+      </button>
+      <button (click)="delete(person.id)" color="warn" mat-flat-button>
+        Удалить
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  <button (click)="add()" class="new_button" color="accent" mat-fab>
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

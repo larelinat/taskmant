@@ -1,0 +1,11 @@
+<mat-toolbar class="header-container" color="primary">
+  <div>
+    <h1>Менеджер задач</h1>
+  </div>
+  <div *ngIf="loginService.isLoggedIn()" class="login-container">
+    <span>{{ loginService.userName }}</span>
+    <button (click)="loginService.logout()" class="logout-button" mat-mini-fab>
+      <mat-icon>logout</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
